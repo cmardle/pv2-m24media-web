@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build files
+.wrangler/
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*.swo
+.claude/
+
+# Documentation
+README.md
+CLAUDE.md
+CLOUDFLARE_BUILD_SETUP.md
+
+# Config files that shouldn't be uploaded
+package.json
+wrangler.json
+.nvmrc
+.wranglerignore
+
+# Test files
+test.txt
