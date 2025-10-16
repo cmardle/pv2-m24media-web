@@ -36,19 +36,15 @@ This is a static marketing website for **Perfumers Vault 2**, a professional per
 
 ## Development Workflow
 
-### Setup
-
-```bash
-npm install
-```
-
 ### Local Development
 
 ```bash
 npm run dev
 ```
 
-This starts Cloudflare Wrangler Pages dev server on http://localhost:8788
+This starts a local HTTP server on http://localhost:8788
+
+No installation required - `http-server` runs via npx.
 
 ### Responsive Breakpoints
 
@@ -84,28 +80,18 @@ FAQ sections use custom accordion logic in `js/faq-accordion.js` with smooth exp
 
 ## Deployment
 
-### Cloudflare Pages (via Dashboard)
+### Cloudflare Pages
 
-Connect your Git repository to Cloudflare Pages with these **exact** settings:
+Connect your Git repository to Cloudflare Pages with these settings:
 
 - **Framework preset:** None
-- **Build command:** Leave **EMPTY** (do not use npm commands)
-- **Build output directory:** `.` (root directory)
-- **Root directory:** `/` (leave as default)
+- **Build command:** Leave **EMPTY**
+- **Build output directory:** `/` (root directory)
+- **Root directory:** (leave as default)
 
-**Important:** Do NOT set a build command. Cloudflare detects `wrangler` and tries to run Workers commands, which will fail. This is a static site - it just needs to copy and serve files.
+This is a pure static site with no build process. Cloudflare Pages will serve all files directly from the repository root.
 
 The site will auto-deploy on every push to your main branch.
-
-### Manual Deployment (via CLI)
-
-```bash
-npm run deploy
-```
-
-This manually deploys the current directory to Cloudflare Pages using `wrangler pages deploy`.
-
-**Note:** This is a static site with no build process. All files are served as-is from the root directory.
 
 ## External Dependencies
 

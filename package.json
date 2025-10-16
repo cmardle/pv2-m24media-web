@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "Perfumers Vault 2 marketing website",
   "scripts": {
-    "dev": "wrangler pages dev . --port 8788",
-    "deploy": "wrangler pages deploy . --project-name=pv2-m24media-web",
-    "preview": "wrangler pages dev .",
+    "dev": "npx http-server . -p 8788",
     "build": "echo 'No build required - static files'"
   },
   "keywords": [
@@ -13,8 +11,5 @@
     "static-site"
   ],
   "author": "Perfodyne Labs LTD",
-  "license": "UNLICENSED",
-  "devDependencies": {
-    "wrangler": "^3.0.0"
-  }
+  "license": "UNLICENSED"
 }
