@@ -2,8 +2,7 @@
   "name": "pv2-m24media-web",
   "compatibility_date": "2025-10-16",
   "assets": {
-    "directory": ".",
-    "binding": "ASSETS"
+    "directory": "."
   },
   "observability": {
     "enabled": true
