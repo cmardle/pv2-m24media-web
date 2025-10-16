@@ -82,16 +82,18 @@ FAQ sections use custom accordion logic in `js/faq-accordion.js` with smooth exp
 
 ### Cloudflare Pages
 
-Connect your Git repository to Cloudflare Pages with these settings:
+**IMPORTANT:** This is a static HTML site with no build process.
 
-- **Framework preset:** None
-- **Build command:** Leave **EMPTY**
-- **Build output directory:** `/` (root directory)
-- **Root directory:** (leave as default)
+In Cloudflare Pages Dashboard → Settings → Builds & deployments:
 
-This is a pure static site with no build process. Cloudflare Pages will serve all files directly from the repository root.
+- **Framework preset:** `None`
+- **Build command:** *(completely empty - remove any text)*
+- **Build output directory:** `/`
+- **Root directory:** `/` (or leave blank)
 
-The site will auto-deploy on every push to your main branch.
+**Key Point:** The build command field MUST be completely empty. If Cloudflare auto-detects any command, it will fail. All HTML, CSS, JS, and assets are already in the repository root and need no processing.
+
+Save these settings, then trigger a new deployment. The site will serve directly from the repository root.
 
 ## External Dependencies
 
