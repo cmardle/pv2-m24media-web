@@ -1,20 +1,14 @@
 {
-  "name": "pv2-m24media-web",
+  "name": "pattr-landing",
   "version": "1.0.0",
-  "description": "Perfumers Vault 2 marketing website",
   "scripts": {
-    "dev": "wrangler pages dev . --port 8788",
-    "build": "echo 'Static site - no build needed'",
-    "deploy": "wrangler deploy",
-    "preview": "wrangler dev"
+    "build": "tailwindcss --postcss -i ./css/tailwind.css -o ./css/tailwind-build.css",
+    "dev": "npx http-server . -p 3000 -o",
+    "serve": "python3 -m http.server 3000"
   },
-  "keywords": [
-    "perfumery",
-    "static-site"
-  ],
-  "author": "Perfodyne Labs LTD",
-  "license": "UNLICENSED",
-  "devDependencies": {
-    "wrangler": "^4.21.0"
+  "dependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.17"
   }
 }
