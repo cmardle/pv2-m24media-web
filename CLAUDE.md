@@ -36,15 +36,27 @@ This is a static marketing website for **Perfumers Vault 2**, a professional per
 
 ## Development Workflow
 
+### Setup
+
+```bash
+npm install
+```
+
 ### Local Development
 
 ```bash
 npm run dev
 ```
 
-This starts a local HTTP server on http://localhost:8788
+This starts Cloudflare Wrangler Pages dev server on http://localhost:8788
 
-No installation required - `http-server` runs via npx.
+### Preview Build Locally
+
+```bash
+npm run preview
+```
+
+Runs Wrangler dev server to simulate Cloudflare Workers environment.
 
 ### Responsive Breakpoints
 
@@ -80,20 +92,36 @@ FAQ sections use custom accordion logic in `js/faq-accordion.js` with smooth exp
 
 ## Deployment
 
-### Cloudflare Pages
+### Cloudflare Workers (via Wrangler)
 
-**IMPORTANT:** This is a static HTML site with no build process.
+This site deploys as a Cloudflare Worker with static assets.
 
-In Cloudflare Pages Dashboard → Settings → Builds & deployments:
+**Configuration files:**
+- `wrangler.json` - Cloudflare Workers configuration
+- `package.json` - Contains deploy script
 
-- **Framework preset:** `None`
-- **Build command:** *(completely empty - remove any text)*
-- **Build output directory:** `/`
-- **Root directory:** `/` (or leave blank)
+**Deploy command:**
+```bash
+npm run deploy
+```
 
-**Key Point:** The build command field MUST be completely empty. If Cloudflare auto-detects any command, it will fail. All HTML, CSS, JS, and assets are already in the repository root and need no processing.
+This runs `wrangler deploy` which:
+1. Uploads static assets from the root directory
+2. Creates a Cloudflare Worker to serve the files
+3. Deploys to Cloudflare's edge network
 
-Save these settings, then trigger a new deployment. The site will serve directly from the repository root.
+**Authentication:**
+First time setup requires Cloudflare login:
+```bash
+npx wrangler login
+```
+
+**Cloudflare Pages Dashboard Settings:**
+- **Build command:** `npm run build`
+- **Deploy command:** `npm run deploy`
+- **Build output directory:** `.` (root)
+
+The build command is a no-op (just echoes a message), and deploy uses Wrangler to push static assets to Cloudflare Workers.
 
 ## External Dependencies
 
