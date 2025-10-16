@@ -1,0 +1,42 @@
+/**
+ * Mobile Fixes for Terms Page
+ * Ensures sidebar navigation doesn't block content on small screens
+ */
+
+/* Hide sidebar navigation completely on mobile devices */
+@media (max-width: 1023px) {
+    .sidebar-nav {
+        display: none !important;
+    }
+    
+    /* Ensure content grid takes full width on mobile */
+    .privacy-content-grid {
+        grid-template-columns: 1fr !important;
+    }
+    
+    /* Adjust main content padding for better mobile viewing */
+    .privacy-content-grid main {
+        padding: 1rem !important;
+    }
+    
+    /* Ensure proper spacing for mobile */
+    .privacy-content-grid main .tw-max-w-4xl {
+        padding-top: 0.5rem !important;
+    }
+}
+
+/* Additional mobile optimizations */
+@media (max-width: 767px) {
+    .privacy-content-grid main {
+        padding: 0.75rem !important;
+    }
+    
+    /* Reduce text size for better mobile readability */
+    .privacy-content-grid main h2 {
+        font-size: 1.25rem !important;
+    }
+    
+    .privacy-content-grid main .tw-prose {
+        font-size: 1rem !important;
+    }
+}

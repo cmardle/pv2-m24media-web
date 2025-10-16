@@ -1,0 +1,240 @@
+/* GDPR Simple Cookie Consent Styles for PV2 */
+.gdpr-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9998;
+  display: none;
+  cursor: default; /* Remove pointer cursor to indicate non-clickable */
+}
+
+.gdpr-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(17, 24, 39, 0.98);
+  color: white;
+  box-shadow: 0 -0.5rem 2rem rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  display: none;
+  z-index: 9999;
+  max-height: 80vh;
+  overflow-y: auto;
+  backdrop-filter: blur(16px);
+  border-top: 3px solid #7c3aed; /* Stronger border to indicate importance */
+}
+
+.gdpr-banner-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .gdpr-banner-content {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.gdpr-banner-text {
+  flex: 1;
+}
+
+.gdpr-banner-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fbbf24; /* Changed to amber to indicate required action */
+}
+
+.gdpr-banner-description {
+  color: #d1d5db;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+/* Make the required text stand out */
+.gdpr-banner-description strong {
+  color: #fbbf24;
+  font-weight: 600;
+}
+
+.gdpr-banner-privacy-link {
+  color: #a855f7;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.gdpr-banner-privacy-link:hover {
+  color: #c084fc;
+}
+
+.gdpr-banner-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: fit-content;
+}
+
+@media (min-width: 640px) {
+  .gdpr-banner-buttons {
+    flex-direction: row;
+  }
+}
+
+.gdpr-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  white-space: nowrap;
+}
+
+.gdpr-btn-accept {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  color: white;
+}
+
+.gdpr-btn-accept:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #9333ea 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+}
+
+.gdpr-btn-decline {
+  background: transparent;
+  border: 1px solid #6b7280;
+  color: #d1d5db;
+}
+
+.gdpr-btn-decline:hover {
+  border-color: #9ca3af;
+  color: white;
+  background: rgba(107, 114, 128, 0.1);
+}
+
+.gdpr-settings-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #a855f7 0%, #c084fc 100%);
+  color: white;
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.gdpr-settings-btn:hover {
+  background: linear-gradient(135deg, #c084fc 0%, #ddd6fe 100%);
+  border-color: #a855f7;
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+}
+
+/* Cookie icon */
+.gdpr-cookie-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Dark mode compatibility */
+  background: rgba(31, 41, 55, 0.98);
+}
+
+  color: #9ca3af;
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+  .gdpr-banner {
+    padding: 1rem;
+  }
+  
+  .gdpr-banner-content {
+    gap: 1rem;
+  }
+  
+  .gdpr-btn {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .gdpr-settings-btn {
+    bottom: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Animation for banner appearance */
+.gdpr-banner.gdpr-show {
+  animation: slideUpPulse 0.5s ease-out;
+}
+
+@keyframes slideUpPulse {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  85% {
+    border-top-color: #a855f7;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    border-top-color: #7c3aed;
+  }
+}
+
+/* Subtle attention-drawing animation for the banner */
+.gdpr-banner {
+  animation: subtlePulse 3s ease-in-out infinite;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    border-top-color: #7c3aed;
+  }
+  50% {
+    border-top-color: #a855f7;
+  }
+}
+
+/* Accessibility improvements */
+.gdpr-btn:focus {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}
+
+.gdpr-settings-btn:focus {
+  outline: 2px solid #a855f7;
+  outline-offset: 2px;
+}

@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Perfumers Vault 2 – Professional Perfumery Management Software</title>
+        <meta name="description" content="Perfumers Vault 2 helps perfumers create, manage, and scale their perfume formulas with ease. Secure, fast, and built for modern perfumers." />
+        <link rel="shortcut icon" href="assets/logo/pv2_logo_tr.png" type="image/x-icon" />
+
+        <!-- Open Graph -->
+        <meta property="og:title" content="Perfumers Vault 2 – The Future of Perfumery Management" />
+        <meta property="og:description" content="Manage your perfume formulas, ingredients, and suppliers in one place. Available on iOS and Android." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.perfodynelabs.com/pv2" />
+
+        <!-- Tailwind build (keep your existing compiled file/path) -->
+        <link rel="stylesheet" href="./css/tailwind-build.css" />
+        <!-- Custom styles that power effects and overrides -->
+        <link rel="stylesheet" href="./index.css" />
+        <!-- FAQ specific styles (includes header styles) -->
+        <link rel="stylesheet" href="./css/faq.css" />
+        <!-- GDPR Consent styles -->
+        <link rel="stylesheet" href="./css/gdpr-consent.css" />
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    </head>
+    <body class="tw-flex tw-min-h-[100vh] tw-flex-col">
+    <header
+        class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-bg-[#fff]
+            tw-px-[5%] max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
+    >
+            <div class="header-logo-container tw-flex tw-items-center tw-gap-3 tw-min-w-fit" style="display: flex; align-items: center; gap: 0.75rem; min-width: fit-content; white-space: nowrap;">
+                <a class="tw-h-[150px] tw-w-[150px] tw-p-[4px]" href="#" style="height: 60px; width: 60px; padding: 4px; flex-shrink: 0;">
+                    <img src="assets/logo/pv2_logo_tr.png" alt="Perfumers Vault 2 logo" class="tw-object tw-h-full tw-w-full" />
+                </a>
+                <a href="#" class="header-app-name tw-text-xl tw-font-bold tw-text-gray-800-text-white tw-no-underline max-lg:tw-hidden tw-whitespace-nowrap" style="font-size: 1.25rem; font-weight: 700; color: #1f2937; text-decoration: none; white-space: nowrap; flex-shrink: 0;">
+                    Perfumers Vault 2
+                </a>
+            </div>
+            <div class="collapsible-header animated-collapse max-lg:tw-shadow-md" id="collapsed-header-items">
+                <div class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base-text-white max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center">
+                    <a class="header-links" href="#features">Features</a>
+                    <a class="header-links" href="faq.html">FAQ</a>
+                    <a class="header-links" href="privacy.html">App Privacy</a>
+                    <a class="header-links" href="terms.html">App Terms</a>
+                </div>
+                <div class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"></div>
+            </div>
+            <button
+                class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
+                onclick="toggleHeader()"
+                aria-label="menu"
+                id="collapse-btn"
+            ></button>
+
+        </header>
+
+        <!-- HERO -->
+        <section class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden max-lg:tw-p-4 max-md:tw-mt-[50px]" id="about">
+            <div class="tw-flex tw-h-full tw-min-h-[100vh] tw-w-full tw-place-content-center tw-gap-6 tw-p-[5%] max-xl:tw-place-items-center max-lg:tw-flex-col">
+                <div class="tw-flex tw-flex-col tw-place-content-center">
+                    <div class="tw-flex tw-flex-wrap tw-text-6xl tw-font-semibold tw-uppercase tw-leading-[80px] max-lg:tw-text-4xl max-md:tw-leading-snug">
+                        <span class="reveal-hero-text">Perfumers Vault 2</span>
+                    </div>
+                    <div class="reveal-hero-text tw-mt-2 tw-text-2xl tw-font-medium tw-text-primary">
+                        The all-in-one digital workspace for modern perfumers
+                    </div>
+                    <div class="reveal-hero-text tw-mt-2 tw-max-w-[450px] tw-p-2 tw-text-justify max-lg:tw-max-w-full">
+                        From formula creation to ingredient sourcing – Perfumers Vault 2 streamlines your entire perfumery workflow. Built for indie creators, brands, and labs who demand precision and creativity.
+                    </div>
+                    <div class="reveal-hero-text tw-mt-4 tw-flex tw-place-items-center tw-gap-4 tw-overflow-hidden tw-p-2">
+                        <a class="tw-h-[50px] tw-max-w-[150px]" href="https://apps.apple.com/us/app/perfumers-vault-2/id6748814424">
+                            <img src="./assets/images/brand-logos/app-store-badge.png" alt="Download on the App Store" class="tw-h-full tw-w-full" />
+                        </a>
+                        <a id="google-play-badge" class="tw-h-[50px] tw-max-w-[150px]" href="#" role="button" aria-label="Google Play - coming soon">
+                            <img src="assets/images/brand-logos/google-play-badge.png" alt="Get it on Google Play" class="tw-h-full tw-w-full" />
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tw-flex tw-w-full tw-max-w-[50%] tw-place-content-center tw-place-items-center tw-overflow-hidden max-lg:tw-max-w-[unset]">
+                    <div class="tw-relative tw-flex tw-max-h-[580px] tw-min-h-[450px] tw-min-w-[350px] tw-max-w-[650px] tw-overflow-hidden max-lg:tw-h-fit max-lg:tw-max-h-[320px] max-lg:tw-min-h-[180px] max-lg:tw-w-[320px] max-lg:tw-min-w-[320px]">
+                        <img src="assets/images/ipad.png" alt="PV2 Dashboard on iPad" class="reveal-hero-img tw-z-[1] tw-h-full tw-w-full tw-object-contain"/>
+                        <div class="tw-absolute tw-bottom-0 tw-left-1/2 tw-h-[80%] tw-w-[80%] tw--translate-x-1/2 tw-rounded-full tw-bg-secondary" id="hero-img-bg"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- FEATURES A -->
+        <section class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden tw-p-6" id="features">
+            <div class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10">
+                <div class="tw-flex">
+                    <div class="tw-h-[450px] tw-w-[300px]">
+                        <img src="assets/images/Formula_Main.png" alt="Security illustration" class="tw-h-full tw-w-full tw-object-contain"/>
+                    </div>
+                </div>
+                <div class="tw-mt-6 tw-flex tw-max-w-[520px] tw-flex-col tw-gap-4">
+                    <h3 class="tw-text-4xl tw-font-medium">Advanced formulation</h3>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-check-all !tw-text-2xl"></i> Group by note type</h4>
+                        <span class="tw-text-lg">Effortlessly organize your formula by note type—top, heart, base, or solvents—for clearer composition and easier adjustments.</span>
+                    </div>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-check-all !tw-text-2xl"></i> Instant IFRA compliance</h4>
+                        <span class="tw-text-lg">Quickly see IFRA compliance for every ingredient and formula, ensuring safety and regulatory alignment as you create.</span>
+                    </div>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-check-all !tw-text-2xl"></i> Stock view</h4>
+                        <span class="tw-text-lg">Monitor ingredient stock levels in real time, get low-inventory alerts, and plan purchases directly from your workspace.</span>
+                    </div>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-check-all !tw-text-2xl"></i> Export to PDF</h4>
+                        <span class="tw-text-lg">Export your formulas and ingredient lists to PDF for easy sharing, printing, or archiving.</span>
+                    </div>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-check-all !tw-text-2xl"></i> QR code generation</h4>
+                        <span class="tw-text-lg">Generate QR codes for your formulas or ingredient lists to quickly share or access them on any device.</span>
+                    </div>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-check-all !tw-text-2xl"></i> IFRA document generation</h4>
+                        <span class="tw-text-lg">Automatically generate IFRA documentation for your formulas, ready for compliance and client needs.</span>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES B -->
+        <section class="tw-relative tw-flex tw-w-full tw-max-w-[100vw] tw-flex-col tw-overflow-hidden tw-p-6">
+            <div class="reveal-up tw-flex tw-min-h-[60vh] tw-place-content-center tw-place-items-center tw-gap-[10%] max-lg:tw-flex-col max-lg:tw-gap-10">
+                <div class="tw-mt-6 tw-flex tw-max-w-[520px] tw-flex-col tw-gap-4">
+                    <h3 class="tw-text-4xl tw-font-medium">IFRA Library Integration</h3>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-check-all !tw-text-2xl"></i> Up-to-date IFRA standards</h4>
+                        <span class="tw-text-lg">Access the latest IFRA guidelines directly in your workspace for instant compliance checks.</span>
+                    </div>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-check-all !tw-text-2xl"></i> Flexible IFRA library import</h4>
+                        <span class="tw-text-lg">Upload the official IFRA library XLS file to stay current with the latest standards and maintain compliance control.</span>
+                    </div>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-check-all !tw-text-2xl"></i> Lightning-fast ingredient search</h4>
+                        <span class="tw-text-lg">Quickly locate ingredients and formulas—even in large libraries—so you never lose your creative momentum.</span>
+                    </div>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-check-all !tw-text-2xl"></i> Detailed view per ingredient</h4>
+                        <span class="tw-text-lg">See IFRA category limits, restrictions, and safety data for each ingredient at a glance—empowering informed formulation decisions.</span>
+                    </div>
+                    <div class="tw-mt-4 tw-flex tw-flex-col tw-gap-3">
+                        <h4 class="tw-text-xl tw-font-medium"><i class="bi bi-file-earmark-pdf !tw-text-2xl"></i> Export ingredient data to PDF</h4>
+                        <span class="tw-text-lg">Easily export ingredient details, including IFRA data and restrictions, to PDF for documentation, sharing, or compliance purposes.</span>
+                    </div>
+                </div>
+                <div class="tw-flex">
+                    <div class="tw-h-[450px] tw-w-[300px]">
+                        <img src="assets/images/IFRA_Library.png" alt="Performance illustration" class="tw-h-full tw-w-full tw-object-contain"/>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURE GRID -->
+        <section class="tw-relative tw-flex tw-min-h-[60vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6" id="">
+            <div class="tw-mt-8 tw-flex tw-flex-col tw-place-items-center tw-gap-5">
+                <div class="reveal-up tw-mt-5 tw-flex tw-flex-col tw-gap-3 tw-text-center">
+                    <h2 class="tw-text-4xl tw-font-semibold">More features to elevate your perfumery lab</h2>
+                </div>
+                <div class="tw-mt-6 tw-flex tw-max-w-[60%] tw-flex-wrap tw-place-content-center tw-gap-2 max-lg:tw-flex-col">
+                    <div class="reveal-up tw-flex tw-h-[150px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-gap-1"><i class="bi bi-bezier2 tw-text-2xl"></i><h3 class="tw-text-2xl tw-font-semibold">Formula Builder</h3></div>
+                        <div class="tw-text-[#595959]">Design, version, and duplicate formulas with gram/mL/percentage precision.</div>
+                    </div>
+                    <div class="reveal-up tw-flex tw-h-[150px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-gap-1"><i class="bi bi-collection tw-text-2xl"></i><h3 class="tw-text-2xl tw-font-semibold">Ingredient Database</h3></div>
+                        <div class="tw-text-[#595959]">Search thousands of materials with notes, allergens, restrictions, and suppliers.</div>
+                    </div>
+                    <div class="reveal-up tw-flex tw-h-[150px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-gap-1"><i class="bi bi-people tw-text-2xl"></i><h3 class="tw-text-2xl tw-font-semibold">Supplier Management</h3></div>
+                        <div class="tw-text-[#595959]">Compare quotes, track lead times, and maintain preferred vendors.</div>
+                    </div>
+                    <div class="reveal-up tw-flex tw-h-[150px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-gap-1"><i class="bi bi-shield-check tw-text-2xl"></i><h3 class="tw-text-2xl tw-font-semibold">IFRA Compliance</h3></div>
+                        <div class="tw-text-[#595959]">Instantly validate formulas against IFRA categories and limitations.</div>
+                    </div>
+                    <div class="reveal-up tw-flex tw-h-[150px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-gap-1"><i class="bi bi-upc-scan tw-text-2xl"></i><h3 class="tw-text-2xl tw-font-semibold">Batch Tracking</h3></div>
+                        <div class="tw-text-[#595959]">Record batches, yields, and QC notes for consistent production.</div>
+                    </div>
+                    <div class="reveal-up tw-flex tw-h-[150px] tw-w-[350px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-gap-1"><i class="bi bi-filetype-csv tw-text-2xl"></i><h3 class="tw-text-2xl tw-font-semibold">Export & Reporting</h3></div>
+                        <div class="tw-text-[#595959]">Share PDFs/CSVs and generate ingredient usage and cost reports.</div>
+                    </div>
+                </div>
+
+           
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="tw-bg-gray-50-bg-gray-800 tw-py-8 tw-px-6 tw-border-t-border-gray-700 tw-mt-auto" style="background-color: #f9fafb; padding: 2rem 1.5rem; border-top: 1px solid #e5e7eb; margin-top: auto;">
+            <div class="tw-max-w-4xl tw-mx-auto tw-text-center" style="max-width: 56rem; margin: 0 auto; text-align: center;">
+                <div class="tw-text-gray-600-text-gray-300 tw-mb-4" style="color: #4b5563; margin-bottom: 1rem;">© 2025 Perfumers Vault 2. All rights reserved.</div>
+                <div class="tw-flex tw-justify-center tw-gap-6 tw-flex-wrap" style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                    <a href="/privacy.html" target="_blank" class="tw-text-gray-600-text-gray-300 hover:tw-text-purple-600-text-purple-400 tw-transition-colors" style="color: #4b5563; transition: color 0.2s ease; text-decoration: none;">Company Privacy</a>
+                    <a href="/terms.html" target="_blank" class="tw-text-gray-600-text-gray-300 hover:tw-text-purple-600-text-purple-400 tw-transition-colors" style="color: #4b5563; transition: color 0.2s ease; text-decoration: none;">Company Terms</a>
+                </div>
+                <div class="tw-mt-4 tw-text-sm tw-text-gray-500-text-gray-400" style="margin-top: 1rem; font-size: 0.875rem; color: #6b7280;">
+                    Developed by <strong><a href="https://perfodynelabs.com" target="_blank" rel="noopener noreferrer" class="tw-text-gray-700 hover:tw-text-purple-600 tw-transition-colors" style="color: #374151; text-decoration: none; transition: color 0.2s ease;">Perfodyne Labs LTD</a></strong>
+                </div>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js" crossorigin="anonymous"></script>
+        <script src="./index.js"></script>
+        <!-- GDPR Consent Script -->
+        <script src="./js/gdpr-consent.js"></script>
+    </body>
+</body>
+<script>
+// Google Play badge: show "coming soon" toast positioned near the icon
+(function(){
+    const gpBadges = [document.getElementById('google-play-badge'), document.getElementById('google-play-badge-cta')];
+    
+    gpBadges.forEach(gp => {
+        if (!gp) return;
+        gp.addEventListener('click', function(e){
+            e.preventDefault();
+            const existing = document.getElementById('gp-coming-soon-toast');
+            if (existing) existing.remove();
+
+            const t = document.createElement('div');
+            t.id = 'gp-coming-soon-toast';
+            t.textContent = 'Google Play — coming soon';
+            Object.assign(t.style, {
+                position: 'fixed',
+                left: '0px',
+                top: '0px',
+                background: 'rgba(0,0,0,0.85)',
+                color: '#fff',
+                padding: '8px 12px',
+                borderRadius: '6px',
+                zIndex: 99999,
+                fontFamily: 'sans-serif',
+                fontSize: '14px',
+                pointerEvents: 'none',
+                opacity: '0',
+                transform: 'translateY(4px)',
+                transition: 'opacity 160ms ease, transform 160ms ease'
+            });
+            document.body.appendChild(t);
+
+            // Measure and position near the badge (centered horizontally). Prefer above the icon; if not enough space, place below.
+            const rect = gp.getBoundingClientRect();
+            const toastRect = t.getBoundingClientRect();
+            const margin = 8;
+            let left = rect.left + rect.width / 2 - toastRect.width / 2;
+            left = Math.max(margin, Math.min(left, window.innerWidth - toastRect.width - margin));
+            // Try above first
+            let top = rect.top - toastRect.height - margin;
+            if (top < margin) {
+                // place below if not enough space above
+                top = rect.bottom + margin;
+            }
+            t.style.left = Math.round(left) + 'px';
+            t.style.top = Math.round(top) + 'px';
+
+            // Show then auto-hide
+            requestAnimationFrame(() => {
+                t.style.opacity = '1';
+                t.style.transform = 'translateY(0)';
+            });
+            setTimeout(() => {
+                t.style.opacity = '0';
+                t.style.transform = 'translateY(4px)';
+                setTimeout(() => t.remove(), 200);
+            }, 2000);
+        });
+    });
+})();
+</script>
+</html>
