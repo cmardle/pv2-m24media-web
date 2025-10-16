@@ -86,12 +86,14 @@ FAQ sections use custom accordion logic in `js/faq-accordion.js` with smooth exp
 
 ### Cloudflare Pages (via Dashboard)
 
-Connect your Git repository to Cloudflare Pages with these settings:
+Connect your Git repository to Cloudflare Pages with these **exact** settings:
 
-- **Build command:** `npm run build` (or leave empty)
-- **Build output directory:** `.` (root directory)
-- **Root directory:** `/` (default)
 - **Framework preset:** None
+- **Build command:** Leave **EMPTY** (do not use npm commands)
+- **Build output directory:** `.` (root directory)
+- **Root directory:** `/` (leave as default)
+
+**Important:** Do NOT set a build command. Cloudflare detects `wrangler` and tries to run Workers commands, which will fail. This is a static site - it just needs to copy and serve files.
 
 The site will auto-deploy on every push to your main branch.
 
@@ -101,7 +103,7 @@ The site will auto-deploy on every push to your main branch.
 npm run deploy
 ```
 
-This manually deploys the current directory to Cloudflare Pages using Wrangler.
+This manually deploys the current directory to Cloudflare Pages using `wrangler pages deploy`.
 
 **Note:** This is a static site with no build process. All files are served as-is from the root directory.
 
